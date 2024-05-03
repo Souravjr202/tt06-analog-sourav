@@ -1,8 +1,11 @@
+
+
+
 `default_nettype none
 
 // just a stub to keep the Tiny Tapeout tools happy
 
-module tt_um_example (
+module tt_um_tkmdemo (
     input  wire       VGND,
     input  wire       VPWR,
     input  wire [7:0] ui_in,    // Dedicated inputs
@@ -16,4 +19,10 @@ module tt_um_example (
     input  wire       rst_n     // reset_n - low to reset
 );
 
-endmodule
+
+assign uio_out = 0;
+assign uio_oe = 0;
+    assign uo_out[0]= ui_in[0]^ui_in[1];
+    assign uo_out[1]=ui_in[0] & ui_in[1];
+    assign uo_out[7:2]=6'b0;
+    endmodule
